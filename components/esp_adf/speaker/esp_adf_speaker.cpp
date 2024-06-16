@@ -160,7 +160,7 @@ void ESPADFSpeaker::start_() {
   if (!this->parent_->try_lock()) {
     return;  // Waiting for another i2s component to return lock
   }
-  gpio_set_level(PA_ENABLE_GPIO, 1);  // Enable PA
+  //gpio_set_level(PA_ENABLE_GPIO, 1);  // Enable PA
   xTaskCreate(ESPADFSpeaker::player_task, "speaker_task", 8192, (void *) this, 0, &this->player_task_handle_);
 }
 
